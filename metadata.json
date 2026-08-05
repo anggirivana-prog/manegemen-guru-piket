@@ -1,0 +1,6 @@
+{
+  "name": "Sistem Manajemen Guru Piket",
+  "description": "Aplikasi Sistem Manajemen Guru Piket Sekolah berbasis React, Google Apps Script, dan Google Sheets",
+  "requestFramePermissions": ["camera", "geolocation"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
