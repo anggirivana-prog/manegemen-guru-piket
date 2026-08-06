@@ -112,7 +112,7 @@ export const LoginView: React.FC<LoginViewProps> = ({
             Multi-Login E-Piket Sekolah
           </h1>
           <p className="text-xs text-slate-500 dark:text-slate-400">
-            Akses Terpadu Multi-User Administrator, Operator & Guru Piket
+            Akses Terpadu Administrator & Guru Piket Sekolah
           </p>
         </div>
 
@@ -128,7 +128,7 @@ export const LoginView: React.FC<LoginViewProps> = ({
             }`}
           >
             <KeyRound className="w-4 h-4" />
-            <span>Login Admin & Operator</span>
+            <span>Login Admin</span>
           </button>
 
           <button
@@ -151,9 +151,9 @@ export const LoginView: React.FC<LoginViewProps> = ({
             <div className="p-3 rounded-xl bg-blue-50 dark:bg-blue-950/40 border border-blue-200 dark:border-blue-900/60 flex items-center gap-3">
               <ShieldCheck className="w-5 h-5 text-blue-600 dark:text-blue-400 flex-shrink-0" />
               <div className="text-xs">
-                <p className="font-extrabold text-blue-900 dark:text-blue-200">Mode Akses Administrator / Operator</p>
+                <p className="font-extrabold text-blue-900 dark:text-blue-200">Mode Akses Administrator</p>
                 <p className="text-blue-700/80 dark:text-blue-300/80 text-[11px]">
-                  Kelola data guru, jadwal piket, presensi, dan sync ke Google Sheets.
+                  Kelola data guru, jadwal piket, presensi, dan sinkronisasi Google Sheets.
                 </p>
               </div>
             </div>
@@ -248,8 +248,8 @@ export const LoginView: React.FC<LoginViewProps> = ({
               <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">
                 Hak Akses Role
               </label>
-              <div className="grid grid-cols-3 gap-2">
-                {(['Admin', 'Operator', 'Guru'] as Role[]).map(r => (
+              <div className="grid grid-cols-2 gap-2">
+                {(['Admin', 'Guru'] as Role[]).map(r => (
                   <button
                     key={r}
                     type="button"
@@ -281,29 +281,21 @@ export const LoginView: React.FC<LoginViewProps> = ({
             <p className="text-[10px] font-bold text-slate-400 uppercase tracking-wider text-center">
               Quick Switch Multi-Account Demo:
             </p>
-            <div className="grid grid-cols-3 gap-1.5">
+            <div className="grid grid-cols-2 gap-2">
               <button
                 type="button"
                 onClick={() => handleQuickPresetLogin('Admin', 'admin')}
-                className="py-1.5 px-2 rounded-lg text-[10px] font-bold bg-red-50 text-red-700 dark:bg-red-950/60 dark:text-red-300 border border-red-200 dark:border-red-900 hover:bg-red-100 text-center transition-all"
+                className="py-2 px-3 rounded-xl text-xs font-bold bg-red-50 text-red-700 dark:bg-red-950/60 dark:text-red-300 border border-red-200 dark:border-red-900 hover:bg-red-100 text-center transition-all flex items-center justify-center gap-1.5"
               >
-                🔴 Admin Utama
-              </button>
-
-              <button
-                type="button"
-                onClick={() => handleQuickPresetLogin('Operator', 'operator')}
-                className="py-1.5 px-2 rounded-lg text-[10px] font-bold bg-amber-50 text-amber-700 dark:bg-amber-950/60 dark:text-amber-300 border border-amber-200 dark:border-amber-900 hover:bg-amber-100 text-center transition-all"
-              >
-                🟡 Operator
+                <span>🔴 Admin Utama</span>
               </button>
 
               <button
                 type="button"
                 onClick={() => handleQuickPresetLogin('Guru', 'budi')}
-                className="py-1.5 px-2 rounded-lg text-[10px] font-bold bg-blue-50 text-blue-700 dark:bg-blue-950/60 dark:text-blue-300 border border-blue-200 dark:border-blue-900 hover:bg-blue-100 text-center transition-all"
+                className="py-2 px-3 rounded-xl text-xs font-bold bg-emerald-50 text-emerald-700 dark:bg-emerald-950/60 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-900 hover:bg-emerald-100 text-center transition-all flex items-center justify-center gap-1.5"
               >
-                🔵 Guru Piket
+                <span>🟢 Guru Piket</span>
               </button>
             </div>
           </div>

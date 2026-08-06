@@ -138,13 +138,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                   </p>
                   <div className="flex justify-end mt-0.5">
                     <Badge
-                      variant={
-                        currentUser.role === 'Admin'
-                          ? 'danger'
-                          : currentUser.role === 'Operator'
-                          ? 'warning'
-                          : 'info'
-                      }
+                      variant={currentUser.role === 'Admin' ? 'danger' : 'info'}
                       size="sm"
                     >
                       {currentUser.role}
@@ -194,29 +188,14 @@ export const Navbar: React.FC<NavbarProps> = ({
                     </button>
 
                     <button
-                      onClick={() => handleQuickSwitch('operator', 'Operator')}
-                      className={`w-full text-left px-3 py-2 rounded-xl text-xs flex items-center gap-2.5 transition-colors ${
-                        currentUser.role === 'Operator'
-                          ? 'bg-amber-50 dark:bg-amber-950/40 text-amber-700 dark:text-amber-300 font-bold'
-                          : 'hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300'
-                      }`}
-                    >
-                      <UserIcon className="w-3.5 h-3.5 text-amber-500" />
-                      <div>
-                        <p className="truncate font-semibold">Siti Rahmawati</p>
-                        <p className="text-[10px] text-slate-400">Akses Staff Operator</p>
-                      </div>
-                    </button>
-
-                    <button
                       onClick={() => handleQuickSwitch('budi', 'Guru')}
                       className={`w-full text-left px-3 py-2 rounded-xl text-xs flex items-center gap-2.5 transition-colors ${
                         currentUser.username === 'budi'
-                          ? 'bg-blue-50 dark:bg-blue-950/40 text-blue-700 dark:text-blue-300 font-bold'
+                          ? 'bg-emerald-50 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-300 font-bold'
                           : 'hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300'
                       }`}
                     >
-                      <GraduationCap className="w-3.5 h-3.5 text-blue-500" />
+                      <GraduationCap className="w-3.5 h-3.5 text-emerald-500" />
                       <div>
                         <p className="truncate font-semibold">Drs. H. Budi Santoso</p>
                         <p className="text-[10px] text-slate-400">Akses Guru Piket</p>
@@ -227,11 +206,11 @@ export const Navbar: React.FC<NavbarProps> = ({
                       onClick={() => handleQuickSwitch('ani', 'Guru')}
                       className={`w-full text-left px-3 py-2 rounded-xl text-xs flex items-center gap-2.5 transition-colors ${
                         currentUser.username === 'ani'
-                          ? 'bg-blue-50 dark:bg-blue-950/40 text-blue-700 dark:text-blue-300 font-bold'
+                          ? 'bg-emerald-50 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-300 font-bold'
                           : 'hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300'
                       }`}
                     >
-                      <GraduationCap className="w-3.5 h-3.5 text-blue-500" />
+                      <GraduationCap className="w-3.5 h-3.5 text-emerald-500" />
                       <div>
                         <p className="truncate font-semibold">Dra. Hj. Ani Wijaya</p>
                         <p className="text-[10px] text-slate-400">Akses Guru Piket</p>

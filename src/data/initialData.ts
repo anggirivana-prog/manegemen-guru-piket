@@ -2,10 +2,10 @@ import { User, Guru, MasterPiket, Jadwal, Presensi, PengaturanSekolah } from '..
 
 export const initialUsers: User[] = [
   { id: 'USR-001', username: 'admin', password: 'password123', nama: 'Administrator Utama', role: 'Admin', status: 'Aktif' },
-  { id: 'USR-002', username: 'operator', password: 'password123', nama: 'Siti Rahmawati, S.Pd', role: 'Operator', status: 'Aktif' },
-  { id: 'USR-003', username: 'budi', password: 'password123', nama: 'Drs. H. Budi Santoso, M.Pd', role: 'Guru', status: 'Aktif' },
-  { id: 'USR-004', username: 'ani', password: 'password123', nama: 'Dra. Hj. Ani Wijaya', role: 'Guru', status: 'Aktif' },
-  { id: 'USR-005', username: 'dewi', password: 'password123', nama: 'Dewi Lestari, S.Si', role: 'Guru', status: 'Aktif' },
+  { id: 'USR-002', username: 'budi', password: 'password123', nama: 'Drs. H. Budi Santoso, M.Pd', role: 'Guru', status: 'Aktif' },
+  { id: 'USR-003', username: 'ani', password: 'password123', nama: 'Dra. Hj. Ani Wijaya', role: 'Guru', status: 'Aktif' },
+  { id: 'USR-004', username: 'dewi', password: 'password123', nama: 'Dewi Lestari, S.Si', role: 'Guru', status: 'Aktif' },
+  { id: 'USR-005', username: 'fauzi', password: 'password123', nama: 'Ahmad Fauzi, S.Pd', role: 'Guru', status: 'Aktif' },
 ];
 
 export const initialGuru: Guru[] = [

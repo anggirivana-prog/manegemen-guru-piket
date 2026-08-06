@@ -276,7 +276,6 @@ export const SettingsForm: React.FC<SettingsFormProps> = ({
                   className="w-full px-3 py-1.5 text-xs rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800"
                 >
                   <option value="Admin">Admin</option>
-                  <option value="Operator">Operator</option>
                   <option value="Guru">Guru</option>
                 </select>
               </div>
@@ -315,13 +314,7 @@ export const SettingsForm: React.FC<SettingsFormProps> = ({
                   <div className="flex items-center gap-1.5 mt-0.5">
                     <span className="text-[10px] text-slate-400 font-mono">@{u.username}</span>
                     <Badge
-                      variant={
-                        u.role === 'Admin'
-                          ? 'danger'
-                          : u.role === 'Operator'
-                          ? 'warning'
-                          : 'info'
-                      }
+                      variant={u.role === 'Admin' ? 'danger' : 'info'}
                       size="sm"
                     >
                       {u.role}
