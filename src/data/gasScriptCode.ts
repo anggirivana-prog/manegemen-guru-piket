@@ -334,12 +334,43 @@ function savePresensi(params) {
   var sheet = getSheet('Presensi');
   var id = data.id || ('PRS-' + Math.floor(10000 + Math.random() * 90000));
   var now = new Date().toISOString();
+  
+  var fotoStr = data.foto || '';
+  if (fotoStr.length > 25000) {
+    fotoStr = fotoStr.substring(0, 25000);
+  }
+
   sheet.appendRow([
     id, data.tanggal || '', data.hari || '', data.jenisPiket || '', data.namaGuru || '',
     data.jamDatang || '', data.jamPulang || '', data.status || 'Hadir', data.keterangan || '',
-    data.foto || '', data.latitude || '', data.longitude || '', now
+    fotoStr, data.latitude || '', data.longitude || '', now
   ]);
   return { status: 'success', message: 'Presensi berhasil disimpan', id: id };
+}
+
+function updatePresensi(params) {
+  params = params || {};
+  var data = params.data || params;
+  if (!data.id) return { status: 'error', message: 'ID Presensi tidak ditemukan' };
+
+  var sheet = getSheet('Presensi');
+  var values = sheet.getDataRange().getValues();
+  var fotoStr = data.foto || '';
+  if (fotoStr.length > 25000) {
+    fotoStr = fotoStr.substring(0, 25000);
+  }
+
+  for (var i = 1; i < values.length; i++) {
+    if (values[i][0] === data.id) {
+      sheet.getRange(i + 1, 2, 1, 11).setValues([[
+        data.tanggal || '', data.hari || '', data.jenisPiket || '', data.namaGuru || '',
+        data.jamDatang || '', data.jamPulang || '', data.status || 'Hadir', data.keterangan || '',
+        fotoStr, data.latitude || '', data.longitude || ''
+      ]]);
+      return { status: 'success', message: 'Presensi berhasil diperbarui' };
+    }
+  }
+  return { status: 'error', message: 'Presensi tidak ditemukan' };
 }
 
 function deletePresensi(params) {
